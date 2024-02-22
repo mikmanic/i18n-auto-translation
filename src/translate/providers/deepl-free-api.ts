@@ -25,8 +25,8 @@ export class DeepLFreeAPI extends Translate {
       `https://${DeepLFreeAPI.endpoint}/v2/translate`,
       {
         text: [encode(valuesForTranslation.join(Translate.sentenceDelimiter))],
-        target_lang: argv.to,
-        source_lang: argv.from,
+        target_lang: this.getLocale(argv.to),
+        source_lang: this.getLocale(argv.from),
         preserve_formatting: true,
       },
       DeepLFreeAPI.axiosConfig,

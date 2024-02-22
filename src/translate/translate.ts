@@ -223,4 +223,18 @@ export abstract class Translate {
       console.log((e as Error).message);
     }
   };
+
+  /** look for locales.json file to map args.from and args.to */
+  protected getLocale = (locale: string): string => {
+    if (fs.existsSync('locales.json')) {
+      const locales = fs.readFileSync('locales.json', 'utf-8');
+      const localesMap = JSON.parse(locales) as Record<string, string>;
+
+      if (localesMap[locale]) {
+        return localesMap[locale];
+      }
+    }
+
+    return locale;
+  };
 }
