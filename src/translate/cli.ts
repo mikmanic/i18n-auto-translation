@@ -84,6 +84,6 @@ export const argv: Arguments = yargs(process.argv.slice(2))
       alias: 's',
       description: 'Number of spaces to use for indentation.',
       default: 2,
-    }
+    },
   })
   .parseSync();

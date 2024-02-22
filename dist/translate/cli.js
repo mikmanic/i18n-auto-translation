@@ -74,7 +74,7 @@ exports.argv = (0, yargs_1.default)(process.argv.slice(2))
         alias: 's',
         description: 'Number of spaces to use for indentation.',
         default: 2,
-    }
+    },
 })
     .parseSync();
 //# sourceMappingURL=cli.js.map
