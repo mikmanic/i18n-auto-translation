@@ -168,7 +168,7 @@ class Translate {
         };
         this.writeToFile = (content, saveTo, message) => {
             try {
-                fs_1.default.writeFileSync(saveTo, JSON.stringify(content, null, 2));
+                fs_1.default.writeFileSync(saveTo, JSON.stringify(content, null, cli_1.argv.spaces));
                 console.log(message);
             }
             catch (e) {
